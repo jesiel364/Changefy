@@ -1,0 +1,81 @@
+Manager:
+	Main:
+	scr2:
+
+<Main>:
+	name: 'home'
+	MDBoxLayout:
+		orientation: 'vertical'
+
+		MDToolbar:
+			title: 'Changefy'
+			elevation: 10
+			size_hint: .999, .1
+			md_bg_color: .2, .2, .2, 1
+
+
+		FloatLayout:
+			MDLabel:
+				text: 'You\'re Welcome'
+				halign: 'center'
+				pos_hint: {'center_y': .9}
+				font_style: 'H5'
+				
+
+			MDTextField:
+				id: text
+				hint_text: 'Your Text'
+				pos_hint: {'center_x': .5, 'center_y': .7}
+				size_hint: .8, .3
+				multiline: True
+
+			MDTextField:
+				id: pattern
+				hint_text: 'Key'
+				pos_hint: {'center_x': .5,'center_y': .5}
+				size_hint: .8, None
+
+			MDTextField:
+				id: change_for
+				hint_text: 'Change for'
+				pos_hint: {'center_x': .5,'center_y': .4}
+				size_hint: .8, None
+
+			MDRaisedButton:
+				text: 'Change'
+				pos_hint: {'center_x': .5, 'center_y': .3}
+				on_press: app.root.current = 'scr2'
+				md_bg_color: .2, .2, .2, 1
+
+			
+				
+<scr2>:
+	name: 'scr2'
+	MDBoxLayout:
+		orientation: 'vertical'
+		MDToolbar:
+			title: 'Changefy'
+			elevation: 10
+			size_hint: .999, .1
+			md_bg_color: .2, .2, .2, 1
+
+		MDFloatLayout:
+
+			MDLabel:
+				text: 'Result of change'
+				font_style: 'H4'
+				halign: 'center'
+				pos_hint: {'center_y': .9}
+
+			MDLabel:
+				id: result
+				text: 'Result'
+				halign: 'center'
+				pos_hint: {'center_y': .5}
+
+			MDRaisedButton:
+				text: 'Okay'
+				pos_hint: {'center_x': .5, 'center_y': .2}
+				on_press: app.root.current = 'home'
+				md_bg_color: .2, .2, .2, 1
+
